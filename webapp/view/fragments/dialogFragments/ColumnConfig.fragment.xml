@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form" xmlns:ui="sap.ui.table">
+    <Dialog showHeader="true" contentWidth="10rem">
+        <Table id="idTableIncidents" sticky="ColumnHeaders" class="columnSepatorTable"
+            updateFinished="onListUpdateFinished"
+            items="{TableColModel>/Columns}">
+            <columns>
+                <Column hAlign="Begin">
+                    <Text text="Field" />
+                </Column>
+                <Column hAlign="Begin">
+                    <Text text="Visible" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{TableColModel>Label}" />
+                        <Switch state="{TableColModel>Visible}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <endButton>
+            <Button text="Close" type="Reject" press="onColConfigClose" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

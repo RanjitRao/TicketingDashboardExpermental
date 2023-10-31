@@ -1,0 +1,73 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table"
+    xmlns:cm="sap.suite.ui.commons" xmlns:smartTable="sap.ui.comp.smarttable" 	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <smartTable:SmartTable id="LineItemsSmartTable" entitySet="AlertSet"
+        tableType="Table" useExportToExcel="true"
+        beforeExport="onBeforeExport" useVariantManagement="false"
+        useTablePersonalisation="true" header="Incident List" showRowCount="true"
+        persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"
+        showFullScreenButton="true" beforeRebindTable="onBeforeRebindTable"
+        initiallyVisibleFields="{applicationModel>/initiallyVisibleFields}"
+        requestAtLeastFields="{applicationModel>/requestAtLeastFields}">
+        <smartTable:customData>
+            <core:CustomData
+                key="p13nDialogSettings"
+                value='\{
+                    "sort": \{ "visible": true},
+                    "filter": \{ "visible": false}
+                }' />
+        </smartTable:customData>
+        <table:Table selectionMode="Single" visibleRowCountMode="Auto">
+            <table:columns>
+                <table:Column>
+                    <table:customData>
+                        <core:CustomData key="p13nData"
+                            value='\{"sortProperty": "ServiceTicket", "filterProperty": "ServiceTicket", "columnKey": "ServiceTicket", "leadingProperty": "ServiceTicket", "columnIndex":"0"}' />
+                    </table:customData>
+                    <Label text="Incident" />
+                    <table:template>
+                        <Link text="{ServiceTicket}" press="showIncidentDetails" />
+                    </table:template>
+                </table:Column>
+                <table:Column>
+                    <table:customData>
+                        <core:CustomData key="p13nData"
+                            value='\{"sortProperty": "AlertID", "filterProperty": "AlertID", "columnKey": "AlertID", "additionalProperty": "ErrorCategory", "leadingProperty": "AlertID", "columnIndex":"1"}' />
+                    </table:customData>
+                    <Label text="Alert Id" />
+                    <table:template>
+                        <Link text="{AlertID}" press="navToAlertMapping">
+                            <customData>
+                                <core:CustomData key="ErrorCategory" value='{ErrorCategory}' />
+                            </customData>
+                        </Link>
+                    </table:template>
+                </table:Column>
+                <table:Column>
+                    <table:customData>
+                        <core:CustomData key="p13nData"
+                            value='\{"sortProperty": "CreatedOn", "filterProperty": "CreatedOn", "columnKey": "CreatedOn", "additionalProperty": "CreatedAt", "type":"date", "leadingProperty": "CreatedOn", "columnIndex":"2"}' />
+                    </table:customData>
+                    <Label text="Created On" />
+                    <table:template>
+                        <Text
+                            text="{parts:['CreatedOn', 'CreatedAt', 'applicationModel>/Date'], formatter:'com.ticketDashboard.util.Formatter.getFormattedDateTime'}" />
+                    </table:template>
+                </table:Column>
+                <table:Column>
+                    <table:customData>
+                        <core:CustomData key="p13nData"
+                            value='\{"sortProperty": "CreatedAt", "filterProperty": "CreatedAt", "columnKey": "CreatedAt", "additionalProperty": "CreatedOn","type":"time", "leadingProperty": "CreatedAt", "columnIndex":"3"}' />
+                    </table:customData>
+                    <Label text="Created At" />
+                    <table:template>
+                        <Text
+                            text="{parts:['CreatedOn', 'CreatedAt', 'applicationModel>/Time'], formatter:'com.ticketDashboard.util.Formatter.getFormattedDateTime'}" />
+                    </table:template>
+                </table:Column>
+            </table:columns>
+        </table:Table>
+        <smartTable:layoutData>
+            <FlexItemData growFactor="1" baseSize="0%" />
+        </smartTable:layoutData>
+    </smartTable:SmartTable>
+</core:FragmentDefinition>

@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form" xmlns:ui="sap.ui.table">
+    <Dialog showHeader="true" contentWidth="80%">
+        <customHeader>
+            <!-- <OverflowToolbar id="otb1">
+                <Title text="Incident List({applicationModel>/IncidentListCount})" />
+                <ToolbarSpacer />
+                <Button icon="sap-icon://action-settings" press="onSettingsPress"/>
+                <Button icon="sap-icon://excel-attachment" press="onExport"/>
+                <Button icon="sap-icon://exit-full-screen" press="onExitFullScreenPress"/>
+            </OverflowToolbar> -->
+            <core:Fragment
+                fragmentName="com.ticketDashboard.view.fragments.viewFragments.tableUtility"
+                type="XML" id="idTableUtilityFragD" />
+        </customHeader>
+        <VBox class="whiteBG" fitContainer="true">
+            <core:Fragment
+                fragmentName="com.ticketDashboard.view.fragments.viewFragments.table"
+                type="XML" id="idTableFSFrag" />
+        </VBox>
+    </Dialog>
+</core:FragmentDefinition>

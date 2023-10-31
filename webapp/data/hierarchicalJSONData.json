@@ -1,0 +1,466 @@
+{
+	"static": {
+		"sap_Responsive_Page_0-content-sap_ui_layout_BlockLayout-1565776256772-content-sap_ui_layout_BlockLayoutRow-1565793218679-content-sap_ui_layout_BlockLayoutCell-1-content-sap_m_Tree-1565793282610": [{
+			"NodeID": 1,
+			"ParentNodeID": 0,
+			"name": "Europe",
+			"HierarchyLevel": 0,
+			"expanded": false,
+			"counter": null,
+			"Nodes": [{
+				"NodeID": 2,
+				"ParentNodeID": 1,
+				"pos": "2.2137;46.2276",
+				"name": "France",
+				"HierarchyLevel": 1,
+				"expanded": false,
+				"counter": null
+			}, {
+				"NodeID": 3,
+				"ParentNodeID": 1,
+				"name": "Germany",
+				"pos": "10.4515;51.1657",
+				"HierarchyLevel": 1,
+				"expanded": false,
+				"counter": null
+			}]
+		}, {
+			"name": "North America",
+			"NodeID": 5,
+			"ParentNodeID": 0,
+			"HierarchyLevel": 0,
+			"expanded": false,
+			"counter": null,
+			"Nodes": [{
+				"NodeID": 6,
+				"ParentNodeID": 5,
+				"pos": "106.3468;56.1304",
+				"name": "Canada",
+				"HierarchyLevel": 1,
+				"expanded": false,
+				"counter": null
+			}, {
+				"NodeID": 7,
+				"ParentNodeID": 5,
+				"pos": "95.7129;37.0902",
+				"name": "USA",
+				"HierarchyLevel": 1,
+				"expanded": false,
+				"counter": null
+			}]
+		}, {
+			"name": "South America",
+			"NodeID": 8,
+			"ParentNodeID": 0,
+			"HierarchyLevel": 0,
+			"expanded": false,
+			"counter": null,
+			"Nodes": [{
+				"name": "Argentina",
+				"pos": "63.6167;38.4161",
+				"NodeID": 9,
+				"ParentNodeID": 8,
+				"HierarchyLevel": 1,
+				"expanded": false,
+				"counter": null
+			}, {
+				"name": "Brazil",
+				"NodeID": 10,
+				"pos": "51.9253;14.2350",
+				"ParentNodeID": 8,
+				"HierarchyLevel": 1,
+				"expanded": false,
+				"counter": null
+			}]
+		}]
+	},
+	"combined": {
+		"ChangeControlSet": [{
+			"ID": "1001",
+			"Nodes": [{
+				"ID": "10011"
+			}, {
+				"ID": "10012"
+			}, {
+				"ID": "10013"
+			}, {
+				"ID": "10014"
+			}]
+		}, {
+			"ID": "1002",
+			"Nodes": [{
+				"ID": "10021"
+			}, {
+				"ID": "10022"
+			}, {
+				"ID": "10023"
+			}]
+		}, {
+			"ID": "1003",
+			"Nodes": [{
+				"ID": "10031"
+			}, {
+				"ID": "10032"
+			}]
+		}],
+		"ChangeControlRegionSet": [{
+			"ID": "10011",
+			"ChangeID": "1001",
+			"Region": "LATAM",
+			"Country": "Brazil",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1001"
+		}, {
+			"ID": "10012",
+			"ChangeID": "1001",
+			"Region": "APAC",
+			"Country": "Argentina",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1001"
+		}, {
+			"ID": "10013",
+			"ChangeID": "1001",
+			"Region": "NA",
+			"Country": "US",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1001"
+		}, {
+			"ID": "10014",
+			"ChangeID": "1001",
+			"Region": "NA",
+			"Country": "Canada",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1001"
+		}, {
+			"ID": "10021",
+			"ChangeID": "1002",
+			"Region": "APAC",
+			"Country": "Argentina",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1002"
+		}, {
+			"ID": "10022",
+			"ChangeID": "1002",
+			"Region": "EU",
+			"Country": "GB",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1002"
+		}, {
+			"ID": "10023",
+			"ChangeID": "1002",
+			"Region": "EU",
+			"Country": "DE",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1002"
+		}, {
+			"ID": "10031",
+			"ChangeID": "1003",
+			"Region": "EU",
+			"Country": "France",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1003"
+		}, {
+			"ID": "10032",
+			"ChangeID": "1003",
+			"Region": "EU",
+			"Country": "Italy",
+			"ActualApprovalDate": null,
+			"___FK_a1b5f00d3ea709d6120ef812_00001": "1003"
+		}],
+		"RegulatoryFilingSet": [{
+			"ID": "3001",
+			"SubmissionID": "12345678",
+			"OriginatingCountry": "Switzerland",
+			"SubmissionType": "Centralised",
+			"Product": "Product A",
+			"Status": "In Progress",
+			"Nodes": [{
+				"ID": "4001",
+				"SubmissionID": "12345678",
+				"OriginatingCountry": "Switzerland",
+				"Product": "Product A",
+				"SubmissionType": "Centralised",
+				"Status": "In Progress"
+			}, {
+				"ID": "4002",
+				"SubmissionID": "12345678",
+				"OriginatingCountry": "Switzerland",
+				"Product": "Product A",
+				"SubmissionType": "Centralised",
+				"Status": "In Progress"
+			}, {
+				"ID": "4003",
+				"SubmissionID": "12345678",
+				"OriginatingCountry": "Switzerland",
+				"Product": "Product A",
+				"SubmissionType": "Centralised",
+				"Status": "In Progress"
+			}, {
+				"ID": "4004",
+				"SubmissionID": "12345678",
+				"OriginatingCountry": "Switzerland",
+				"Product": "Product A",
+				"SubmissionType": "Centralised",
+				"Status": "In Progress"
+			}]
+		}, {
+			"ID": "3002",
+			"SubmissionID": "87654321",
+			"OriginatingCountry": "Germany",
+			"SubmissionType": "Localised",
+			"Product": "Product B",
+			"Status": "In Progress",
+			"Nodes": [{
+				"ID": "4005",
+				"SubmissionID": "87654321",
+				"OriginatingCountry": "Germany",
+				"Product": "Product B",
+				"SubmissionType": "Localised",
+				"Status": "In Progress"
+			}, {
+				"ID": "4006",
+				"SubmissionID": "87654321",
+				"OriginatingCountry": "Germany",
+				"Product": "Product B",
+				"SubmissionType": "Localised",
+				"Status": "In Progress"
+			}, {
+				"ID": "4007",
+				"SubmissionID": "87654321",
+				"OriginatingCountry": "Germany",
+				"Product": "Product B",
+				"SubmissionType": "Localised",
+				"Status": "In Progress"
+			}]
+		}, {
+			"ID": "3003",
+			"SubmissionID": "13579064",
+			"OriginatingCountry": "Germany",
+			"SubmissionType": "Localised",
+			"Product": "Product B",
+			"Status": "In Progress",
+			"Nodes": [{
+				"ID": "4008",
+				"SubmissionID": "13579064",
+				"OriginatingCountry": "Germany",
+				"Product": "Product B",
+				"SubmissionType": "Localised",
+				"Status": "In Progress"
+			}, {
+				"ID": "4009",
+				"SubmissionID": "13579064",
+				"OriginatingCountry": "Germany",
+				"Product": "Product B",
+				"SubmissionType": "Localised",
+				"Status": "In Progress"
+			}]
+		}],
+		"RegFilingDetailsSet": [{
+			"ID": "4001",
+			"SubmissionID": "12345678",
+			"OriginatingCountry": "Switzerland",
+			"Region": "LATAM",
+			"Country": "Brazil",
+			"Product": "Product A",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Centralised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3001"
+		}, {
+			"ID": "4002",
+			"SubmissionID": "12345678",
+			"OriginatingCountry": "Switzerland",
+			"Region": "APAC",
+			"Country": "Argentina",
+			"Product": "Product A",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Centralised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3001"
+		}, {
+			"ID": "4003",
+			"SubmissionID": "12345678",
+			"OriginatingCountry": "Switzerland",
+			"Region": "NA",
+			"Country": "Canada",
+			"Product": "Product A",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Centralised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3001"
+		}, {
+			"ID": "4004",
+			"SubmissionID": "12345678",
+			"OriginatingCountry": "Switzerland",
+			"Region": "NA",
+			"Country": "US",
+			"Product": "Product A",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Centralised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3001"
+		}, {
+			"ID": "4005",
+			"SubmissionID": "87654321",
+			"OriginatingCountry": "Germany",
+			"Region": "APAC",
+			"Country": "Argetina",
+			"Product": "Product B",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Localised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3002"
+		}, {
+			"ID": "4006",
+			"SubmissionID": "87654321",
+			"OriginatingCountry": "Germany",
+			"Region": "EU",
+			"Country": "Spain",
+			"Product": "Product B",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Localised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3002"
+		}, {
+			"ID": "4007",
+			"SubmissionID": "87654321",
+			"OriginatingCountry": "Germany",
+			"Region": "EU",
+			"Country": "Germany",
+			"Product": "Product B",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Localised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3002"
+		}, {
+			"ID": "4008",
+			"SubmissionID": "13579064",
+			"OriginatingCountry": "Germany",
+			"Region": "EU",
+			"Country": "Germany",
+			"Product": "Product B",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Localised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3003"
+		}, {
+			"ID": "4009",
+			"SubmissionID": "13579064",
+			"OriginatingCountry": "Germany",
+			"Region": "EU",
+			"Country": "France",
+			"Product": "Product B",
+			"ActualMarketApprDate": null,
+			"SubmissionType": "Localised",
+			"Status": "In Progress",
+			"___FK_39175a0b11e37f8112140c7b_00029": "3003"
+		}],
+		"SummaryCCStatusSet": [{
+			"ID": "6001",
+			"Status": "Initiated",
+			"NumberAtStatus": 10
+		}, {
+			"ID": "6002",
+			"Status": "In Progress",
+			"NumberAtStatus": 15
+		}, {
+			"ID": "6003",
+			"Status": "Approved",
+			"NumberAtStatus": 12
+		}],
+		"CCbyFilterSet": [{
+			"ID": "7001",
+			"FilterName": "All Change Controls",
+			"NoInFIlter": 37,
+			"Dummy": null
+		}, {
+			"ID": "7002",
+			"FilterName": "Due in 90 Days",
+			"NoInFIlter": 14,
+			"Dummy": null
+		}, {
+			"ID": "7003",
+			"FilterName": "Overdue",
+			"NoInFIlter": 5,
+			"Dummy": null
+		}, {
+			"ID": "7004",
+			"FilterName": "Created in last 90 days",
+			"NoInFIlter": 7,
+			"Dummy": null
+		}, {
+			"ID": "7005",
+			"FilterName": "With Missing Data",
+			"NoInFIlter": 2,
+			"Dummy": null
+		}],
+		"CCbyRegionSet": [{
+			"ID": "8002",
+			"Region": "North America",
+			"NumberInRegion": 10,
+			"Country": "",
+			"NumberInCountry": 10
+		}, {
+			"ID": "8003",
+			"Region": "Europe",
+			"NumberInRegion": 12,
+			"Country": "",
+			"NumberInCountry": 9
+		}, {
+			"ID": "8005",
+			"Region": "APAC",
+			"NumberInRegion": 10,
+			"Country": "",
+			"NumberInCountry": 10
+		}, {
+			"ID": "8006",
+			"Region": "North America",
+			"NumberInRegion": null,
+			"Country": "US",
+			"NumberInCountry": 5
+		}, {
+			"ID": "8007",
+			"Region": "North America",
+			"NumberInRegion": null,
+			"Country": "Canada",
+			"NumberInCountry": 5
+		}, {
+			"ID": "8009",
+			"Region": "Europe",
+			"NumberInRegion": null,
+			"Country": "France",
+			"NumberInCountry": 4
+		}, {
+			"ID": "8010",
+			"Region": "Europe",
+			"NumberInRegion": null,
+			"Country": "Germany",
+			"NumberInCountry": 5
+		}],
+		"CCbyErrorSet": [{
+			"ID": "9002",
+			"MissingData": "Product",
+			"NuumberMissing": 0
+		}, {
+			"ID": "9003",
+			"MissingData": "Site",
+			"NuumberMissing": 1
+		}, {
+			"ID": "9004",
+			"MissingData": "Change Type",
+			"NuumberMissing": 0
+		}, {
+			"ID": "9005",
+			"MissingData": "Estimated Completion Date",
+			"NuumberMissing": 0
+		}, {
+			"ID": "9006",
+			"MissingData": "Expected Approval Date",
+			"NuumberMissing": 1
+		}, {
+			"ID": "9007",
+			"MissingData": "Country",
+			"NuumberMissing": 0
+		}]
+	}
+}

@@ -1,0 +1,89 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	controllerName="com.ticketDashboard.controller.Page1" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:m="sap.m"
+	xmlns:microchart="sap.suite.ui.microchart" xmlns:vbm="sap.ui.vbm"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:vk="sap.ui.vk"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:w="sap.ui.integration.widgets">
+	<Page id="idOverviewPage" showHeader="false" class="sapUiSizeCompact" showNavButton="true">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false"
+					search=".onSearch" filterChange=".onFilterChange"
+					afterVariantLoad=".onAfterVariantLoad">
+					<fb:filterGroupItems>
+						<fb:FilterGroupItem name="Filter1" label="Filter1" groupName="Group1"
+							visibleInFilterBar="true">
+							<fb:control>
+								<MultiComboBox
+									name="Name"
+									selectionChange=".onSelectionChange">
+									<core:Item key="{key}" text="{name}" />
+								</MultiComboBox>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem name="Filter2" label="Filter2" groupName="Group1"
+							visibleInFilterBar="true">
+							<fb:control>
+								<MultiComboBox
+									name="Category"
+									selectionChange=".onSelectionChange">
+									<core:Item key="{key}" text="{name}" />
+								</MultiComboBox>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem name="Filter3" label="Filter3" groupName="Group1"
+							visibleInFilterBar="true">
+							<fb:control>
+								<MultiComboBox
+									name="SupplierName"
+									selectionChange=".onSelectionChange">
+									<core:Item key="{key}" text="{name}" />
+								</MultiComboBox>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem name="Filter4" label="Filter4" groupName="Group1"
+							visibleInFilterBar="true">
+							<fb:control>
+								<MultiComboBox
+									name="SupplierName"
+									selectionChange=".onSelectionChange">
+									<core:Item key="{key}" text="{name}" />
+								</MultiComboBox>
+							</fb:control>
+						</fb:FilterGroupItem>
+					</fb:filterGroupItems>
+				</fb:FilterBar>
+			</VBox>
+			<l:Grid hSpacing="1" defaultSpan="L3 M4 S12">
+				<l:content>
+					<w:Card manifest="{manifests>/table}">
+						 <w:layoutData>
+							<l:GridData span="L4 M12 S12" />
+						</w:layoutData> 
+					</w:Card>
+					<f:GridContainer class="customGrid">
+						<w:Card manifest="{manifests>/stackedColumn}" action="onAction">
+							<w:layoutData>
+								<f:GridContainerItemLayoutData minRows="4" columns="12" />
+							</w:layoutData>
+						</w:Card>
+						<f:layoutData>
+							<l:GridData span="L5 M12 S12" />
+						</f:layoutData>
+					</f:GridContainer>
+					<f:GridContainer class="customGrid">
+						<w:Card manifest="{manifests>/donut}" action="onAction">
+							<w:layoutData>
+								<f:GridContainerItemLayoutData minRows="4" columns="12" />
+							</w:layoutData>
+						</w:Card>
+					</f:GridContainer>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+
+</mvc:View>

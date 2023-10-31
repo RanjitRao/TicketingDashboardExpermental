@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:ui="sap.ui.table">
+	<Dialog showHeader="false" contentWidth="80%">
+		<VBox class="sapUiSmallMargin">
+			<f:SimpleForm id="SimpleFormDisplay480_Trial"
+				editable="false"
+				layout="ResponsiveGridLayout"
+				title="{AlertDataModel>ServiceTicket}"
+				labelSpanXL="4"
+				labelSpanL="4"
+				labelSpanM="4"
+				labelSpanS="12"
+				adjustLabelSpan="false"
+				emptySpanXL="0"
+				emptySpanL="0"
+				emptySpanM="0"
+				emptySpanS="0"
+				columnsXL="3"
+				columnsL="2"
+				columnsM="2"
+				singleContainerFullSize="false">
+				<f:content>
+					<!-- =======================================================-->
+					<core:Title text="Process Details" />
+					<!-- =======================================================-->
+					<Label text="Alert Id" />
+					<Text text="{AlertDataModel>AlertID}" />
+					<Label text="Process Id" />
+					<Text text="{AlertDataModel>ProcessID}" />
+					<Label text="Process" />
+					<Text text="{AlertDataModel>ProcessDesc}" />
+					<Label text="Main Process" />
+					<Text text="{AlertDataModel>MainProcessDesc}" />
+					<Label text="Sub Process" />
+					<Text text="{AlertDataModel>SubProcessDesc}" />
+					<!-- =======================================================-->
+					<core:Title text="Other Details" />
+					<!-- =======================================================-->
+					<Label text="Created On" />
+					<Text text="{parts:['AlertDataModel>CreatedOn', 'AlertDataModel>CreatedAt'], formatter:'com.ticketDashboard.util.Formatter.getFormattedDateTime'}" />
+					<Label text="Priority" />
+					<Text text="{AlertDataModel>PriorityDesc}" />
+					<Label text="Status" />
+					<Text text="{AlertDataModel>Status}" />
+					<Label text="Category" />
+					<Text text="{AlertDataModel>CategoryDesc}" />
+					<Label text="TicketCreationTs" />
+					<Text text="{AlertDataModel>TicketCreationTs}" />
+				</f:content>
+			</f:SimpleForm>
+			<TextArea rows="5" width="100%"/>
+			<HBox width="100%" justifyContent="End">
+				<Button text="Close" press="onDetailsClose" type="Reject" />
+			</HBox>
+		</VBox>
+	</Dialog>
+</core:FragmentDefinition>

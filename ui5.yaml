@@ -1,0 +1,27 @@
+specVersion: "2.4"
+metadata:
+ name: com.ticketDashboard
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: true
+        backend:
+          - path: /sap
+            url: https://soscisrd.sok.fi:44300
+            client: "110"
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: 1.108.17
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+  

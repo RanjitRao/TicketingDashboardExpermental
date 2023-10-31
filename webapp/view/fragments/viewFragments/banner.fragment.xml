@@ -1,0 +1,103 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:vk="sap.ui.vk" xmlns:mc="sap.suite.ui.microchart" xmlns:l="sap.ui.layout">
+	<List>
+		<CustomListItem highlight="None" type="Active" class="customListItem"
+			press="onIncidentsBannerPress">
+			<HBox justifyContent="SpaceBetween" alignItems="Center"
+				class="sapUiTinyMargin">
+				<HBox>
+					<core:Icon src="sap-icon://filter" class="sapUiTinyMarginEnd" color="#031E48"
+						visible="false" />
+					<ObjectStatus text="Total Incidents" class="sapMObjectStatusSmall" />
+				</HBox>
+				<ObjectStatus class="sapMObjectStatusSmall"
+					text="{StatDataModel>/results/0/Total}" />
+			</HBox>
+			<customData>
+				<core:CustomData key="status" value="Total" />
+				<core:CustomData key="filterOn" value="{applicationModel>/bTotalFilter}" />
+			</customData>
+		</CustomListItem>
+		<layoutData>
+			<l:GridData span="L3 M6 S12" />
+		</layoutData>
+	</List>
+	<List>
+		<CustomListItem highlight="{path: 'StatDataModel>/results/0/StatusCount/results/1/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" type="Active" class="customListItem"
+			press="onIncidentsBannerPress">
+			<HBox justifyContent="SpaceBetween" alignItems="Center"
+				class="sapUiTinyMargin">
+				<HBox>
+					<core:Icon src="sap-icon://filter" class="sapUiTinyMarginEnd" color="#031E48"
+						visible="{applicationModel>/bOpenFilter}" />
+					<ObjectStatus
+						text="{StatDataModel>/results/0/StatusCount/results/1/Description}"
+						class="sapMObjectStatusSmall"
+						state="{path: 'StatDataModel>/results/0/StatusCount/results/1/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" />
+				</HBox>
+				<ObjectStatus class="sapMObjectStatusSmall"
+					text="{StatDataModel>/results/0/StatusCount/results/1/Count}" state="{path: 'StatDataModel>/results/0/StatusCount/results/1/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" />
+			</HBox>
+			<customData>
+				<core:CustomData key="status"
+					value="{StatDataModel>/results/0/StatusCount/results/1/StatusID}" />
+					<core:CustomData key="filterOn" value="{applicationModel>/bOpenFilter}" />
+			</customData>
+		</CustomListItem>
+		<layoutData>
+			<l:GridData span="L3 M6 S12" />
+		</layoutData>
+	</List>
+	<List>
+		<CustomListItem highlight="{path: 'StatDataModel>/results/0/StatusCount/results/0/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" type="Active" class="customListItem"
+			press="onIncidentsBannerPress">
+			<HBox justifyContent="SpaceBetween" alignItems="Center"
+				class="sapUiTinyMargin">
+				<HBox>
+					<core:Icon src="sap-icon://filter" class="sapUiTinyMarginEnd" color="#031E48"
+						visible="{applicationModel>/bClosedFilter}" />
+					<ObjectStatus
+						text="{StatDataModel>/results/0/StatusCount/results/0/Description}"
+						class="sapMObjectStatusSmall"
+						state="{path: 'StatDataModel>/results/0/StatusCount/results/0/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" />
+				</HBox>
+				<ObjectStatus class="sapMObjectStatusSmall"
+					text="{StatDataModel>/results/0/StatusCount/results/0/Count}" state="{path: 'StatDataModel>/results/0/StatusCount/results/0/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" />
+			</HBox>
+			<customData>
+				<core:CustomData key="status"
+					value="{StatDataModel>/results/0/StatusCount/results/0/StatusID}" />
+					<core:CustomData key="filterOn" value="{applicationModel>/bClosedFilter}" />
+			</customData>
+		</CustomListItem>
+		<layoutData>
+			<l:GridData span="L3 M6 S12" />
+		</layoutData>
+	</List>
+	<List>
+		<CustomListItem highlight="{path: 'StatDataModel>/results/0/StatusCount/results/2/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" type="Active" class="customListItem"
+			press="onIncidentsBannerPress">
+			<HBox justifyContent="SpaceBetween" alignItems="Center"
+				class="sapUiTinyMargin">
+				<HBox>
+					<core:Icon src="sap-icon://filter" class="sapUiTinyMarginEnd" color="#031E48"
+						visible="{applicationModel>/bInProgressFilter}" />
+					<ObjectStatus
+						text="{StatDataModel>/results/0/StatusCount/results/2/Description}"
+						class="sapMObjectStatusSmall" state="{path: 'StatDataModel>/results/0/StatusCount/results/2/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" />
+				</HBox>
+				<ObjectStatus class="sapMObjectStatusSmall"
+					text="{StatDataModel>/results/0/StatusCount/results/2/Count}" state="{path: 'StatDataModel>/results/0/StatusCount/results/2/StatusID', formatter:'com.ticketDashboard.util.Formatter.getStatusColor'}" />
+			</HBox>
+
+			<customData>
+				<core:CustomData key="status"
+					value="{StatDataModel>/results/0/StatusCount/results/2/StatusID}" />
+					<core:CustomData key="filterOn" value="{applicationModel>/bInProgressFilter}" />
+			</customData>
+		</CustomListItem>
+		<layoutData>
+			<l:GridData span="L3 M6 S12" />
+		</layoutData>
+	</List>
+</core:FragmentDefinition>

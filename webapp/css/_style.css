@@ -1,0 +1,146 @@
+.sapMPage>section {
+    background: #ffffff;
+}
+
+.sapMListBGTranslucent .sapMListTblHeader,
+.sapMListBGTranslucent .sapMListTblFooter {
+    background-color: transparent !important;
+}
+
+.sapMListTblHeader>.sapMTableTH {
+    background: transparent;
+}
+
+.sapMListTbl .sapMText,
+.sapMListTbl .sapMLabel {
+    font-size: 0.875rem;
+    color: white;
+    font-weight: normal;
+}
+
+.sapMTitle {
+    color: white;
+}
+
+.sapMText {
+    color: white;
+}
+
+.sapMLabel {
+    color: white;
+}
+
+.sapUiIcon {
+    text-shadow: none;
+}
+
+.sapMLIBHoverable.sapMLIBSelected:hover {
+    background: darkslateblue;
+}
+
+.sapMLIBHoverable:hover {
+    background: darkslateblue;
+}
+
+.sapMLIB.sapMLIBSelected {
+    background: darkslateblue;
+}
+
+.sapMObjStatusNone .sapMObjStatusText {
+    color: white;
+    text-shadow: none;
+}
+
+.sapMTBStandard {
+    border-bottom: none;
+}
+
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: none;
+}
+
+.sapMLIBShowSeparator>td {
+    border-top: 1px solid lightgrey;
+}
+
+.sapMLIB {
+    background: transparent;
+}
+
+.sapMDialog>.sapMDialogSection {
+    max-width: 100%;
+    background: #111322;
+}
+
+.sapMBarPH {
+    background: #111322;
+}
+
+.sapMGrowingList {
+    display: none;
+}
+
+.sapMObjStatusSuccess .sapMObjStatusIcon {
+    color: lime;
+}
+
+.hBoxFlexItem>.sapMFlexItem {
+    width: 50%;
+    border: 0.1rem solid darkslategrey;
+}
+
+.borderBottomRight {
+    border-bottom: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}
+
+.borderTopLeft {
+    border-top: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+}
+
+.sapMITH {
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault .sapMITBText {
+    color: white;
+    text-shadow: none;
+}
+
+.sapMITBFilter .sapMITBText .sapMITHTextContent {
+    text-shadow: none;
+}
+
+.sapMITBContent {
+    background: transparent;
+    border-bottom: none;
+}
+
+.sapMSplitContainerHideMode>.sapMSplitContainerDetail .sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent,
+.sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent {
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+.sapUiTableCnt {
+    background-color: transparent;
+}
+
+.sapUiTableColHdrCnt {
+    background-color: transparent;
+}
+
+.sapUiTableHeaderRow {
+    background-color: transparent;
+}
+
+.sapUiTableContentRow {
+    background-color: transparent;
+}
+
+.sapUiTableContentRow.sapUiTableRowHvr {
+    background-color: transparent;
+}

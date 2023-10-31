@@ -1,0 +1,65 @@
+{
+    "Columns": [
+        {
+            "Label": "Incident",
+            "Property": "ServiceTicket",
+            "Visible": true,
+            "Width": "7rem"
+        },
+        {
+            "Label": "Alert",
+            "Property": "AlertID",
+            "Visible": true,
+            "Width": "7rem"
+        },
+        {
+            "Label": "Description",
+            "Property": "ErrorSubject",
+            "Visible": true
+        },
+        {
+            "Label": "Created On",
+            "Property": "CreatedOn",
+            "Visible": true,
+            "Width": "7rem"
+        },
+        {
+            "Label": "Created At",
+            "Property": "CreatedAt",
+            "Visible": true,
+            "Width": "7rem"
+        },
+        {
+            "Label": "Status",
+            "Property": "Status",
+            "Visible": true,
+            "Width": "7rem"
+        },
+        {
+            "Label": "Priority",
+            "Property": "PriorityDesc",
+            "Visible": true,
+            "Width": "7rem"
+        },
+        {
+            "Label": "Process",
+            "Property": "ProcessDesc",
+            "Visible": false
+        },
+        {
+            "Label": "Main Process",
+            "Property": "MainProcessDesc",
+            "Visible": false
+        },
+        {
+            "Label": "SubProcess",
+            "Property": "SubProcessDesc",
+            "Visible": false
+        },
+        {
+            "Label": "Category",
+            "Property": "CategoryDesc",
+            "Visible": false
+        }
+    ]
+}

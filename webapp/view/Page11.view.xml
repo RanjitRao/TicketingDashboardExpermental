@@ -1,0 +1,50 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" controllerName="com.ticketDashboard.controller.Page1" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:m="sap.m" xmlns:microchart="sap.suite.ui.microchart" xmlns:vbm="sap.ui.vbm" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" xmlns:vk="sap.ui.vk">
+	<Page id="idOverviewPage" showHeader="false" class="sapUiSizeCompact" title="Change Controls Dashboard" showFooter="false"
+		showNavButton="true">
+		<content>
+			<NavContainer id="navCon" afterNavigate="onAfterNavigate">
+				<Page id="Dashboard" showHeader="false">
+					<VBox height="100%">
+						<HBox height="50%" class="hBoxFlexItem">
+							<core:Fragment fragmentName="com.ticketDashboard.view.fragments.viewFragments.Defects" type="XML" id="idDefectsFrag"/>
+							<core:Fragment fragmentName="com.ticketDashboard.view.fragments.viewFragments.LineChart" type="XML" id="idPieChartFrag"/>
+						</HBox>
+						<HBox height="50%" class="hBoxFlexItem">
+							<core:Fragment fragmentName="com.ticketDashboard.view.fragments.viewFragments.TR" type="XML" id="idTRFrag"/>
+							<core:Fragment fragmentName="com.ticketDashboard.view.fragments.viewFragments.PieChart" type="XML" id="idLineChartFrag"/>
+						</HBox>
+					</VBox>
+				</Page>
+				<Page id="Defect" showHeader="false">
+					<l:Splitter height="100%">
+						<VBox class="sapUiTinyMargin">
+							<core:Fragment fragmentName="com.ticketDashboard.view.fragments.viewFragments.DefectMasterList" type="XML" id="idMasterDefectFrag"/>
+							<layoutData>
+								<l:SplitterLayoutData size="30rem" resizable="false"/>
+							</layoutData>
+						</VBox>
+						<VBox>
+							<core:Fragment fragmentName="com.ticketDashboard.view.fragments.viewFragments.DefectDetail" type="XML" id="idDetailDefectFrag"/>
+						</VBox>
+					</l:Splitter>
+					<footer>
+						<OverflowToolbar>
+							<Button type="Back" press="onPressBack"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+				<Page id="AddDefect" showHeader="false">
+					<core:Fragment fragmentName="com.ticketDashboard.view.fragments.viewFragments.DefectAdd" type="XML" id="idDefectAddFrag"/>
+					<footer>
+						<OverflowToolbar>
+							<Button type="Back" press="onPressBack"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+				<Page id="TR" showHeader="false"></Page>
+			</NavContainer>
+		</content>
+	</Page>
+</mvc:View>

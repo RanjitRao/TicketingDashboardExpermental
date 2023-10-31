@@ -1,0 +1,50 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	controllerName="com.ticketDashboard.controller.Page1" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:mc="sap.suite.ui.microchart">
+	<Page id="idOverviewPage" showHeader="false" class="sapUiSizeCompact pageClass"
+		showNavButton="true">
+		<content>
+			<l:Splitter height="100%" orientation="Vertical" class="splitterBar">
+				<VBox>
+					<VBox class="sapUiSmallMargin whiteBG">
+						<core:Fragment
+							fragmentName="com.ticketDashboard.view.fragments.viewFragments.filterBar"
+							type="XML" id="idFilterFrag" />
+					</VBox>
+					<l:Grid hSpacing="1" defaultSpan="L4 M4 S12">
+						<l:content>
+							<VBox class="whiteBG">
+								<core:Fragment
+									fragmentName="com.ticketDashboard.view.fragments.viewFragments.line"
+									type="XML" id="idLineFrag" />
+							</VBox>
+							<VBox class="whiteBG">
+								<core:Fragment
+									fragmentName="com.ticketDashboard.view.fragments.viewFragments.donut"
+									type="XML" id="idDonutFrag" />
+							</VBox>
+							<VBox class="whiteBG">
+								<core:Fragment
+									fragmentName="com.ticketDashboard.view.fragments.viewFragments.upcoming"
+									type="XML" id="idUpcomingFrag" />
+							</VBox>
+							<core:Fragment
+								fragmentName="com.ticketDashboard.view.fragments.viewFragments.banner"
+								type="XML" id="idBannerFrag" />
+						</l:content>
+					</l:Grid>
+					<layoutData>
+						<l:SplitterLayoutData size="{applicationModel>/SplitterHeight}"
+							resizable="false" />
+					</layoutData>
+				</VBox>
+				<VBox class="sapUiSmallMarginBeginEnd whiteBG" fitContainer="true">
+					<core:Fragment
+						fragmentName="com.ticketDashboard.view.fragments.viewFragments.table"
+						type="XML" id="idTableFrag" />
+				</VBox>
+			</l:Splitter>
+		</content>
+	</Page>
+
+</mvc:View>

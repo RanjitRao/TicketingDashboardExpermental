@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:cm="sap.suite.ui.commons">
+    <cm:ChartContainer
+        showFullScreen="true"
+        showZoom="false"
+        showLegendButton="false"
+        title="Processs and Priority Vs Count">
+        <cm:content>
+            <cm:ChartContainerContent
+                icon="sap-icon://line-chart"
+                title="Line Chart">
+                <cm:content>
+                    <viz:VizFrame uiConfig="{applicationSet:'fiori'}" id="idChartStkCol"
+                        height='{applicationModel>/ChartContentHeight}' width="100%" vizType='stacked_column'
+                        vizProperties="{ChartLookModel>/Linear}"  selectData="onStkColDataSelect" deselectData="onStkColDataSelect">
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                data="{StatDataModel>/results/0/ProcPrioCount/results}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition
+                                        name="MainProcess"
+                                        value="{StatDataModel>MainProcess}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="High"
+                                        value="{StatDataModel>High/Count}" />
+                                    <viz.data:MeasureDefinition
+                                        name="Medium"
+                                        value="{StatDataModel>Medium/Count}" />
+                                    <viz.data:MeasureDefinition name="Low"
+                                        value="{StatDataModel>Low/Count}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="valueAxis" type="Measure"
+                                values="High" />
+                            <viz.feeds:FeedItem uid="valueAxis"
+                                type="Measure" values="Medium" />
+                            <viz.feeds:FeedItem uid="valueAxis" type="Measure"
+                                values="Low" />
+                            <viz.feeds:FeedItem uid="categoryAxis"
+                                type="Dimension"
+                                values="MainProcess" />
+                        </viz:feeds>
+                        <viz:dependents>
+                            <viz:Popover id="idStkColPopOver"></viz:Popover>
+                        </viz:dependents>
+                    </viz:VizFrame>
+                </cm:content>
+            </cm:ChartContainerContent>
+        </cm:content>
+    </cm:ChartContainer>
+</core:FragmentDefinition>

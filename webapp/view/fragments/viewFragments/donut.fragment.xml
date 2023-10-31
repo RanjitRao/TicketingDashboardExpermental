@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:cm="sap.suite.ui.commons">
+    <cm:ChartContainer
+        showFullScreen="true"
+        showZoom="false"
+        showLegendButton="false"
+        showLegend="true"
+        title="Incidents percent">
+        <cm:content>
+            <cm:ChartContainerContent
+                icon="sap-icon://line-chart"
+                title="Line Chart">
+                <cm:content>
+                    <viz:VizFrame
+                        id="idChartDonut"
+                        uiConfig="{applicationSet:'fiori'}"
+                        height='{applicationModel>/ChartContentHeight}' width="100%" vizType='donut'
+                        vizProperties="{ChartLookModel>/Radial}" selectData="onDonutDataSelect"
+                        deselectData="onDonutDataSelect">
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                data="{StatDataModel>/results/0/PriorityPercent/results}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Measure"
+                                        value="{StatDataModel>Description}">
+                                        <!-- <viz.data:customData>
+                                            <core:CustomData key="Priority" value="{StatDataModel>PriorityID}"/>
+                                        </viz.data:customData> -->
+                                    </viz.data:DimensionDefinition>
+                                    <viz.data:DimensionDefinition name="Measure"
+                                        value="{StatDataModel>PriorityID}">
+                                        <!-- <viz.data:customData>
+                                        <core:CustomData key="Priority" value="{StatDataModel>PriorityID}"/>
+                                    </viz.data:customData> -->
+                                    </viz.data:DimensionDefinition>
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Value"
+                                        value="{StatDataModel>Count}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="size" type="Measure"
+                                values="Value" />
+                            <viz.feeds:FeedItem uid="color" type="Dimension"
+                                values="Measure" />
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </cm:content>
+            </cm:ChartContainerContent>
+        </cm:content>
+    </cm:ChartContainer>
+</core:FragmentDefinition>

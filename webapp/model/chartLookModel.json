@@ -1,0 +1,90 @@
+{
+	"Radial": {
+		"title": {
+			"text": "",
+			"visible": false
+		},
+		"legend": {
+			"label": {
+				"style": {
+					"color": "black"
+				}
+			}
+		},
+		"plotArea": {
+			"drawingEffect": "glossy",
+			"dataPoint": {
+				"stroke": {
+					"visible": false
+				}
+			},
+			"colorPalette": [
+				"#67cc65",
+				"#4acbc1",
+				"darkgrey",
+				"grey"
+			],
+			"innerRadiusRatio": 0.7,
+			"dataLabel": {
+				"visible": "true",
+				"style": {
+					"color": "black"
+				}
+			}
+		},
+		"interaction": {
+			"selectability": {
+				"mode": "INCLUSIVE"
+			}
+		}
+	},
+	"Linear": {
+		"title": {
+			"text": "",
+			"visible": false
+		},
+		"legend": {
+			"visible": true
+		},
+		"valueAxis": {
+			"title": {
+				"text": "",
+				"visible": false
+			},
+			"label": {
+				"visible": true,
+				"style": {
+					"color": "black"
+				}
+			}
+		},
+		"categoryAxis": {
+			"label": {
+				"visible": true,
+				"style": {
+					"color": "black"
+				}
+			}
+		},
+		"plotArea": {
+			"drawingEffect": "glossy",
+			"colorPalette": [
+				"#67cc65",
+				"#4acbc1",
+				"darkgrey",
+				"grey"
+			],
+			"dataPoint": {
+				"stroke": {
+					"visible": false
+				}
+			},
+			"dataLabel": {
+				"visible": "false",
+				"style": {
+					"color": "white"
+				}
+			}
+		}
+	}
+}

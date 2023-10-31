@@ -1,0 +1,57 @@
+.pageClass.sapMPage>section {
+    background: ghostwhite;
+}
+
+.customGrid.sapFGridContainerLayoutL {
+    grid-template-columns: none !important;
+}
+
+.whiteBG {
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #005e27;
+}
+
+.borderLeftAll {
+    border-left: 0.5rem solid grey;
+}
+
+.borderLeftOpen {
+    border-left: 0.5rem solid #cc1919;
+}
+
+.borderLeftClosed {
+    border-left: 0.5rem solid #007833;
+}
+
+.borderLeftIP {
+    border-left: 0.5rem solid #d14900;
+}
+
+.boldTitle.sapMTitle {
+    font-size: 1.6rem;
+}
+
+.stackedChartSlim.sapSuiteStackedMC {
+    height: 1.7rem !important;
+}
+
+.sapMObjectStatusSmall.sapMObjStatus {
+    font-size: 1.2rem;
+}
+
+.splitterBar.sapUiLoSplitter.sapUiLoSplitterV>.sapUiLoSplitterBar,
+.sapUiLoSplitter.sapUiLoSplitterV>.sapUiLoSplitterOverlay .sapUiLoSplitterOverlayBar {
+    height: 0.1rem;
+}
+
+.customListItem.sapMLIB {
+    border: 1px solid #005e27;
+    background: white;
+}
+
+.columnSepatorTable .sapMListTblCell {
+
+    border-left: 1px solid #ccc;
+
+}
