@@ -1,0 +1,12 @@
+{
+    "base": "./dist",
+    "conn_server": "https://soscisrd.sok.fi:44300",
+    "conn_usestrictssl": false,
+    "conn_user": "RANCH01",
+    "conn_password": "India@2011",
+    "abap_package": "<abap_package>",
+    "abap_bsp": "<abap_bsp>",
+    "abap_transport": "<abap_transport>",
+    "abap_bsp_text": "<abap_bsp_text>",
+    "calcappindex": true
+}
