@@ -85,6 +85,11 @@
 					"color": "white"
 				}
 			}
+		},
+		"interaction": {
+			"selectability": {
+				"mode": "SINGLE"
+			}
 		}
 	}
 }
