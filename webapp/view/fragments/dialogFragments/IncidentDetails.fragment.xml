@@ -48,7 +48,7 @@
 					<Text text="{AlertDataModel>TicketCreationTs}" />
 				</f:content>
 			</f:SimpleForm>
-			<TextArea rows="5" width="100%"/>
+			<!-- <TextArea rows="5" width="100%"/> -->
 			<HBox width="100%" justifyContent="End">
 				<Button text="Close" press="onDetailsClose" type="Reject" />
 			</HBox>

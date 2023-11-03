@@ -6,7 +6,7 @@
         showFullScreen="true"
         showZoom="false"
         showLegendButton="false"
-        title="Processs and Priority Vs Count">
+        title="Main Process and Priority Vs Count">
         <cm:content>
             <cm:ChartContainerContent
                 icon="sap-icon://line-chart"

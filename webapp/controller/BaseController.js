@@ -72,16 +72,20 @@ sap.ui.define([
 			var formatPattern = ChartFormatter.DefaultPattern;
 			var oStkColVizFrame = this.byId(sap.ui.core.Fragment.createId("idLineFrag", "idChartStkCol"));
 			var oDonutVizFrame = this.byId(sap.ui.core.Fragment.createId("idDonutFrag", "idChartDonut"));
+			var oDonut2VizFrame = this.byId(sap.ui.core.Fragment.createId("idDonut2Frag", "idChartDonut2"));
 			//var oStkColPopOver = this.byId(sap.ui.core.Fragment.createId("idLineFrag", "idStkColPopOver"));
 			// oStkColPopOver.connect(oStkColVizFrame.getVizUid());
 			// oStkColPopOver.setFormatString(formatPattern.STANDARDFLOAT);
 			var oStkColTooltip = new VizTooltip({});
 			oStkColTooltip.connect(oStkColVizFrame.getVizUid());
 			oStkColTooltip.setFormatString(formatPattern.STANDARDFLOAT);
-			var oDonutVizFrame = this.byId(sap.ui.core.Fragment.createId("idDonutFrag", "idChartDonut"));
+			//var oDonutVizFrame = this.byId(sap.ui.core.Fragment.createId("idDonutFrag", "idChartDonut"));
 			var oDonutTooltip = new VizTooltip({});
 			oDonutTooltip.connect(oDonutVizFrame.getVizUid());
 			oDonutTooltip.setFormatString(formatPattern.STANDARDFLOAT);
+			var oDonut2Tooltip = new VizTooltip({});
+			oDonut2Tooltip.connect(oDonut2VizFrame.getVizUid());
+			oDonut2Tooltip.setFormatString(formatPattern.STANDARDFLOAT);
 		}
 
 	});

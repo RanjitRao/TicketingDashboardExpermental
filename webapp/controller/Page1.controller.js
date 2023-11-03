@@ -212,6 +212,9 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 			}, {
 				"control": "idMCBMainPriority",
 				"filterField": "Priority"
+			}, {
+				"control": undefined,
+				"filterField": "ProcessID"
 			}]
 			var _finalFilterArr = [];
 			var _jointFilter = [];
@@ -220,7 +223,10 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 				_jointFilter = [];
 				var controlId = controlData[i].control;
 				var filterField = controlData[i].filterField;
-				var _filterKeys = this.byId(sap.ui.core.Fragment.createId("idFilterFrag", controlId)).getSelectedKeys();
+				var _filterKeys = [];
+				if (controlId !== undefined) {
+					_filterKeys = this.byId(sap.ui.core.Fragment.createId("idFilterFrag", controlId)).getSelectedKeys();
+				}
 				var _filterFieldKeysArr = [];
 				for (var j = 0; j < this.listFilterArr.length; j++) {
 					if (this.listFilterArr[j].sPath === filterField) {
@@ -325,7 +331,7 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 				MessageToast.show("error");
 				that.busyDialog(false);
 			};
-			this.oModel.read("/StatisticsSet" + _filterString + "&$expand=PriorityPercent,StatusCount,ProcPrioCount", null, null, null, fnSuccess, fnError);
+			this.oModel.read("/StatisticsSet" + _filterString + "&$expand=PriorityPercent,StatusCount,ProcPrioCount,ProcessIDCounts", null, null, null, fnSuccess, fnError);
 		},
 		prepareProcPrioCountData: function (data) {
 			var mainProcessArr = [];
@@ -408,6 +414,26 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 			var oTable = this.byId(sap.ui.core.Fragment.createId("idTableFrag", "LineItemsSmartTable"));
 			oTable.rebindTable();
 			//	this.filterIncidentList(this.listFilterArr);
+		},
+		onDonut2DataSelect: function (oEvent) {
+			var _index = "";
+			var filterField = "ProcessID";
+			if (this.listFilterArr.length > 0) {
+				for (var i = 0; i < this.listFilterArr.length; i++) {
+					if (this.listFilterArr[i].sPath === filterField) {
+						this.listFilterArr.splice(i, 1);
+						i--;
+					}
+				}
+			}
+			var StatDataModel = this.getView().getModel("StatDataModel");
+			for (var i = 0; i < oEvent.getSource().vizSelection().length; i++) {
+				_index = (oEvent.getSource().vizSelection()[i].data._context_row_number);
+				var oFilter = new sap.ui.model.Filter(filterField, "EQ", StatDataModel.getProperty("/results/0/ProcessIDCounts/results/" + _index + "/" + filterField));
+				this.listFilterArr.push(oFilter);
+			}
+			var oTable = this.byId(sap.ui.core.Fragment.createId("idTableFrag", "LineItemsSmartTable"));
+			oTable.rebindTable();
 		},
 		onStkColDataSelect: function (oEvent) {
 			this.byId(sap.ui.core.Fragment.createId("idDonutFrag", "idChartDonut")).vizSelection([], { "clearSelection": true });
@@ -593,6 +619,9 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 		},
 		onColConfigClose: function () {
 			this.oColumnConfigFSFragment.close();
+		},
+		onDonut2ShowTooltip:function(oEvent){
+			
 		}
 	});
 });
