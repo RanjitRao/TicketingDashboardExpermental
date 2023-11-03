@@ -380,7 +380,7 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 			this.getView().getModel("StatDataModel").setProperty("/results/0/ProcPrioCount/results", finalData);
 		},
 		showIncidentDetails: function (oEvent) {
-			MessageToast.show("Will be navigating to the Incident Detail by cross navigation.");
+			MessageToast.show("Will be navigating to the Incident Detail.");
 			// if (!this.oDetailFragment) {
 			// 	this.oDetailFragment = sap.ui.xmlfragment("com.ticketDashboard.view.fragments.dialogFragments.IncidentDetails", this);
 			// 	this.getView().addDependent(this.oDetailFragment);
@@ -390,7 +390,17 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 			// this.oDetailFragment.setBindingContext(bindingContext, "AlertDataModel");
 			// this.oDetailFragment.open();
 		},
-
+		onPressOpenDetails: function (oEvent) {
+			var incident = oEvent.getSource().data('Incident');
+			if (!this.oDetailFragment) {
+				this.oDetailFragment = sap.ui.xmlfragment("com.ticketDashboard.view.fragments.dialogFragments.IncidentDetails", this);
+				this.getView().addDependent(this.oDetailFragment);
+			}
+			var bindingContext = oEvent.getSource().getBindingContext("AlertDataModel");
+			//this.oDetailFragment.setBindingContext(new sap.ui.model.Context(this.getView().getModel("AlertDataModel"), bindingContextPath));
+			this.oDetailFragment.setBindingContext(bindingContext, "AlertDataModel");
+			this.oDetailFragment.open();
+		},
 		onDetailsClose: function () {
 			this.oDetailFragment.close();
 		},
@@ -620,8 +630,8 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 		onColConfigClose: function () {
 			this.oColumnConfigFSFragment.close();
 		},
-		onDonut2ShowTooltip:function(oEvent){
-			
+		onDonut2ShowTooltip: function (oEvent) {
+
 		}
 	});
 });

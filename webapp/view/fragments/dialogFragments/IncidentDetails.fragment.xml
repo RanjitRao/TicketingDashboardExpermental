@@ -50,6 +50,7 @@
 			</f:SimpleForm>
 			<!-- <TextArea rows="5" width="100%"/> -->
 			<HBox width="100%" justifyContent="End">
+				<Button text="Save" press="onDetailsSave" type="Accept"  class="sapUiSmallMarginEnd"/>
 				<Button text="Close" press="onDetailsClose" type="Reject" />
 			</HBox>
 		</VBox>
