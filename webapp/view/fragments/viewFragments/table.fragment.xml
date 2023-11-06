@@ -17,7 +17,7 @@
                     "filter": \{ "visible": false}
                 }' />
         </smartTable:customData>
-        <table:Table selectionMode="Single" visibleRowCountMode="Auto">
+        <table:Table selectionMode="Multi" visibleRowCountMode="Auto">
             <table:columns>
                 <table:Column resizable="false" width="3.1rem">
                     <table:customData>
