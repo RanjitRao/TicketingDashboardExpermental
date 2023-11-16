@@ -158,6 +158,7 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 			this.busyDialog(true, "busyText");
 			this.oFinalFilter = [];
 			this.listFilterArr = [];
+			this.selectedTableData = [];
 			var _filterString = this.getFilterString();
 			this.getStatisticalData(_filterString);
 			var oTable = this.byId(sap.ui.core.Fragment.createId("idTableFrag", "LineItemsSmartTable"));
@@ -396,6 +397,7 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 				this.oDetailFragment = sap.ui.xmlfragment("com.ticketDashboard.view.fragments.dialogFragments.IncidentDetails", this);
 				this.getView().addDependent(this.oDetailFragment);
 			}
+			var _inc = oEvent.getSource().data('Incident');
 			var bindingContext = oEvent.getSource().getBindingContext("AlertDataModel");
 			//this.oDetailFragment.setBindingContext(new sap.ui.model.Context(this.getView().getModel("AlertDataModel"), bindingContextPath));
 			this.oDetailFragment.setBindingContext(bindingContext, "AlertDataModel");
@@ -403,6 +405,16 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 		},
 		onDetailsClose: function () {
 			this.oDetailFragment.close();
+		},
+		onPressCloseIncidents: function (oEvent) {
+			var oTable = this.byId(sap.ui.core.Fragment.createId("idTableFrag", "LineItemsSmartTable")).getTable();
+			var selectedIndices = oTable.getSelectedIndices();
+			for (var i = 0; i < selectedIndices.length; i++) {
+				var _selectedIncident = oTable.getContextByIndex(selectedIndices[i]).getProperty("ServiceTicket");
+				console.log(_selectedIncident);
+				// create a batch call to close the incident;
+			}
+
 		},
 		onDonutDataSelect: function (oEvent) {
 			this.byId(sap.ui.core.Fragment.createId("idLineFrag", "idChartStkCol")).vizSelection([], { "clearSelection": true });

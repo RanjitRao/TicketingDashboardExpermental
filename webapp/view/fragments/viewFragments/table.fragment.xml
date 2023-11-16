@@ -17,6 +17,13 @@
                     "filter": \{ "visible": false}
                 }' />
         </smartTable:customData>
+        <smartTable:customToolbar>
+            <OverflowToolbar design="Transparent">
+                <ToolbarSpacer />
+                <OverflowToolbarButton icon="sap-icon://sys-cancel" tooltip="Apply UI state changes"
+                    press="onPressCloseIncidents" />
+            </OverflowToolbar>
+        </smartTable:customToolbar>
         <table:Table selectionMode="Multi" visibleRowCountMode="Auto">
             <table:columns>
                 <table:Column resizable="false" width="3.1rem">
@@ -28,7 +35,7 @@
                     <table:template>
                         <Button icon="sap-icon://edit" press="onPressOpenDetails">
                             <customData>
-                                <core:CustomData key="Incident" value="{ServiceTicket}"/>
+                                <core:CustomData key="Incident" value="{ServiceTicket}" />
                             </customData>
                         </Button>
                     </table:template>
