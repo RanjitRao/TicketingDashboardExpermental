@@ -1,12 +1,14 @@
 sap.ui.define(["com/ticketDashboard/controller/BaseController",
 	"sap/m/MessageToast",
+	"sap/m/MessageBox",
 	"./utilities",
 	"sap/ui/core/routing/History",
 	'sap/ui/model/json/JSONModel',
 	'com/ticketDashboard/util/Formatter',
+	'com/ticketDashboard/util/service',
 	'sap/ui/export/library',
 	'sap/ui/export/Spreadsheet'
-], function (BaseController, MessageToast, Utilities, History, JSONModel, Formatter, exportLibrary, Spreadsheet) {
+], function (BaseController, MessageToast, MessageBox, Utilities, History, JSONModel, Formatter, service, exportLibrary, Spreadsheet) {
 	"use strict";
 	var EdmType = exportLibrary.EdmType;
 	return BaseController.extend("com.ticketDashboard.controller.Page1", {
@@ -391,17 +393,38 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 			// this.oDetailFragment.setBindingContext(bindingContext, "AlertDataModel");
 			// this.oDetailFragment.open();
 		},
+		getAlertDetails: function (alert) {
+			var that = this;
+			var fnSuccess = function (data) {
+
+			};
+			var fnError = function (err) {
+
+			};
+			this.oModel.read("/AlertSet(AlertID='" + alert + "')", null, null, null, fnSuccess, fnError);
+		},
 		onPressOpenDetails: function (oEvent) {
 			var incident = oEvent.getSource().data('Incident');
 			if (!this.oDetailFragment) {
 				this.oDetailFragment = sap.ui.xmlfragment("com.ticketDashboard.view.fragments.dialogFragments.IncidentDetails", this);
 				this.getView().addDependent(this.oDetailFragment);
 			}
-			var _inc = oEvent.getSource().data('Incident');
+			var _alertId = oEvent.getSource().data('AlertID');
 			var bindingContext = oEvent.getSource().getBindingContext("AlertDataModel");
+			var that = this;
+			service.callService(this.oModel, "/AlertSet(AlertID='" + _alertId + "')", "GET", {}).then(function (data) {
+				var oTempModel = new JSONModel();
+				oTempModel.setData(data);
+				that.getView().setModel(oTempModel, "AlertDetailModel");
+				that.oDetailFragment.open();
+				that.busyDialog(false);
+			}).catch(function (err) {
+				MessageToast.show("error");
+				that.busyDialog(false);
+			});
+
 			//this.oDetailFragment.setBindingContext(new sap.ui.model.Context(this.getView().getModel("AlertDataModel"), bindingContextPath));
-			this.oDetailFragment.setBindingContext(bindingContext, "AlertDataModel");
-			this.oDetailFragment.open();
+
 		},
 		onDetailsClose: function () {
 			this.oDetailFragment.close();
@@ -409,10 +432,23 @@ sap.ui.define(["com/ticketDashboard/controller/BaseController",
 		onPressCloseIncidents: function (oEvent) {
 			var oTable = this.byId(sap.ui.core.Fragment.createId("idTableFrag", "LineItemsSmartTable")).getTable();
 			var selectedIndices = oTable.getSelectedIndices();
-			for (var i = 0; i < selectedIndices.length; i++) {
-				var _selectedIncident = oTable.getContextByIndex(selectedIndices[i]).getProperty("ServiceTicket");
-				console.log(_selectedIncident);
-				// create a batch call to close the incident;
+			if (selectedIndices.length > 0) {
+				MessageBox.confirm("Do want to close the incidents?", {
+					actions: [MessageBox.Action.YES, MessageBox.Action.NO],
+					emphasizedAction: MessageBox.Action.NO,
+					onClose: function (sAction) {
+						if (sAction === "YES") {
+							for (var i = 0; i < selectedIndices.length; i++) {
+								var _selectedIncident = oTable.getContextByIndex(selectedIndices[i]).getProperty("ServiceTicket");
+								console.log(_selectedIncident);
+								// create a batch call to close the incident;
+							}
+						}
+					}
+				});
+
+			} else {
+				MessageToast.show("No Incidents selected");
 			}
 
 		},

@@ -20,7 +20,7 @@
         <smartTable:customToolbar>
             <OverflowToolbar design="Transparent">
                 <ToolbarSpacer />
-                <OverflowToolbarButton icon="sap-icon://sys-cancel" tooltip="Apply UI state changes"
+                <Button  tooltip="Close Incident" type="Reject" text="Close"
                     press="onPressCloseIncidents" />
             </OverflowToolbar>
         </smartTable:customToolbar>
@@ -35,7 +35,7 @@
                     <table:template>
                         <Button icon="sap-icon://edit" press="onPressOpenDetails">
                             <customData>
-                                <core:CustomData key="Incident" value="{ServiceTicket}" />
+                                <core:CustomData key="AlertID" value="{AlertID}" />
                             </customData>
                         </Button>
                     </table:template>

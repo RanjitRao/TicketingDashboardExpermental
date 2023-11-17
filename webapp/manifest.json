@@ -21,7 +21,7 @@
 	"sap.ui": {
 		"_version": "1.3.0",
 		"technology": "UI5",
-		"fullWidth": false,
+		"fullWidth": true,
 		"icons": {
 			"icon": "",
 			"favIcon": "",

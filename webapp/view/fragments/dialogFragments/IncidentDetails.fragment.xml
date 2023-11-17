@@ -5,7 +5,7 @@
 			<f:SimpleForm id="SimpleFormDisplay480_Trial"
 				editable="false"
 				layout="ResponsiveGridLayout"
-				title="{AlertDataModel>ServiceTicket}"
+				title="{AlertDetailModel>/ServiceTicket}"
 				labelSpanXL="4"
 				labelSpanL="4"
 				labelSpanM="4"
@@ -24,33 +24,60 @@
 					<core:Title text="Process Details" />
 					<!-- =======================================================-->
 					<Label text="Alert Id" />
-					<Text text="{AlertDataModel>AlertID}" />
+					<Text text="{AlertDetailModel>/AlertID}" />
 					<Label text="Process Id" />
-					<Text text="{AlertDataModel>ProcessID}" />
+					<Text text="{AlertDetailModel>/ProcessID}" />
 					<Label text="Process" />
-					<Text text="{AlertDataModel>ProcessDesc}" />
+					<Text text="{AlertDetailModel>/ProcessDesc}" />
 					<Label text="Main Process" />
-					<Text text="{AlertDataModel>MainProcessDesc}" />
+					<Text text="{AlertDetailModel>/MainProcessDesc}" />
 					<Label text="Sub Process" />
-					<Text text="{AlertDataModel>SubProcessDesc}" />
+					<Text text="{AlertDetailModel>/SubProcessDesc}" />
 					<!-- =======================================================-->
 					<core:Title text="Other Details" />
 					<!-- =======================================================-->
 					<Label text="Created On" />
-					<Text text="{parts:['AlertDataModel>CreatedOn', 'AlertDataModel>CreatedAt'], formatter:'com.ticketDashboard.util.Formatter.getFormattedDateTime'}" />
+					<Text
+						text="{parts:['AlertDetailModel>/CreatedOn', 'AlertDetailModel>/CreatedAt'], formatter:'com.ticketDashboard.util.Formatter.getFormattedDateTime'}" />
 					<Label text="Priority" />
-					<Text text="{AlertDataModel>PriorityDesc}" />
+					<!-- <Text text="{AlertDetailModel>/PriorityDesc}" /> -->
+					<!-- <SegmentedButton id="idSegBtnPriority"
+						selectedKey="{AlertDetailModel>/Priority}"
+						width="100%" items="{PriorityModel>/results}">
+						<items>
+							<SegmentedButtonItem text="{PriorityModel>Description}"
+								key="{PriorityModel>Priority}" />
+						</items>
+					</SegmentedButton> -->
+					<ComboBox
+						id="idCBPriority"
+						items="{PriorityModel>/results}" selectedKey="{AlertDetailModel>/Priority}">
+						<core:Item key="{PriorityModel>Priority}" text="{PriorityModel>Description}" />
+					</ComboBox>
 					<Label text="Status" />
-					<Text text="{AlertDataModel>Status}" />
+					<!-- <Text text="{AlertDetailModel>/Status}" /> -->
+					<!-- <SegmentedButton id="idSegBtnStatus"
+						selectedKey="{AlertDetailModel>/StatusID}"
+						width="100%" items="{StatusModel>/results}">
+						<items>
+							<SegmentedButtonItem text="{StatusModel>Description}"
+								key="{StatusModel>Status}" />
+						</items>
+					</SegmentedButton> -->
+					<ComboBox
+						id="idCBStatus"
+						items="{StatusModel>/results}" selectedKey="{AlertDetailModel>/StatusID}">
+						<core:Item key="{StatusModel>Status}" text="{StatusModel>Descripition}" />
+					</ComboBox>
 					<Label text="Category" />
-					<Text text="{AlertDataModel>CategoryDesc}" />
+					<Text text="{AlertDetailModel>/CategoryDesc}" />
 					<Label text="TicketCreationTs" />
-					<Text text="{AlertDataModel>TicketCreationTs}" />
+					<Text text="{AlertDetailModel>/TicketCreationTs}" />
 				</f:content>
 			</f:SimpleForm>
 			<!-- <TextArea rows="5" width="100%"/> -->
 			<HBox width="100%" justifyContent="End">
-				<Button text="Save" press="onDetailsSave" type="Accept"  class="sapUiSmallMarginEnd"/>
+				<Button text="Save" press="onDetailsSave" type="Accept" class="sapUiSmallMarginEnd" />
 				<Button text="Close" press="onDetailsClose" type="Reject" />
 			</HBox>
 		</VBox>
