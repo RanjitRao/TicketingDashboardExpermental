@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
     <smartTable:SmartTable id="LineItemsSmartTable" entitySet="AlertSet"
         tableType="Table" useExportToExcel="true"
-        beforeExport="onBeforeExport" useVariantManagement="false"
+        beforeExport="onBeforeExport" useVariantManagement="true"
         useTablePersonalisation="true" header="Incident List" showRowCount="true"
-        persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"
+        persistencyKey="SmartTable_Monitoring" enableAutoBinding="true"
         showFullScreenButton="true" beforeRebindTable="onBeforeRebindTable"
         initiallyVisibleFields="{applicationModel>/initiallyVisibleFields}"
         requestAtLeastFields="{applicationModel>/requestAtLeastFields}">
